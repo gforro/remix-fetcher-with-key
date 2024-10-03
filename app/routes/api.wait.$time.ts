@@ -5,5 +5,5 @@ export async function loader({ params }: LoaderFunctionArgs) {
   const waitTime = Number(params['time']);
 
   await new Promise((r) => setTimeout(r, waitTime));
-  return json({ waited: waitTime });
+  return json({ now: new Date().toUTCString() });
 }
